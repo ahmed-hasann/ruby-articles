@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-rails
+spec:
+  type: LoadBalancer  # This allows you to access the service from outside the cluster
+  ports:
+    - port: 3000
+      targetPort: 3000
+  selector:
+    app: myapp-rails
+
